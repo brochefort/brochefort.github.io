@@ -1,107 +1,335 @@
-<style>
-.pcard { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 12px; padding: 14px 16px; }
-.pcard-num { font-size: 11px; font-weight: 500; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px; }
-.pcard-head { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 7px; }
-.pcard-body { font-size: 12px; color: var(--color-text-secondary); line-height: 1.55; }
-.pill { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 20px; margin: 2px 2px 0 0; }
-.pill-p { background: #EEEDFE; color: #3C3489; }
-.pill-t { background: #E1F5EE; color: #085041; }
-.pill-a { background: #FAEEDA; color: #633806; }
-.pill-c { background: #FAECE7; color: #712B13; }
-@media (prefers-color-scheme: dark) {
-  .pill-p { background: #26215C; color: #AFA9EC; }
-  .pill-t { background: #04342C; color: #5DCAA5; }
-  .pill-a { background: #412402; color: #FAC775; }
-  .pill-c { background: #4A1B0C; color: #F0997B; }
-}
-.row { display: grid; grid-template-columns: 1fr 22px 1fr 22px 1fr; align-items: center; gap: 8px; margin-bottom: 10px; }
-.arrow-mid { display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--color-text-tertiary); }
-.section-label { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin: 14px 0 8px; border-left: 3px solid var(--color-border-secondary); padding-left: 10px; }
-</style>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Process Examples — Beth Rochefort</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<div class="section-label">MentorWorks: from chaos to a repeatable process</div>
-<div class="row">
-  <div class="pcard">
-    <div class="pcard-num">Challenge</div>
-    <div class="pcard-head">Stakeholders talking past each other</div>
-    <div class="pcard-body">Non-credit boot camp had no agreed credentialing path. Registrar, partner, faculty, and IT each had conflicting requirements and no shared forum.</div>
-  </div>
-  <div class="arrow-mid">→</div>
-  <div class="pcard">
-    <div class="pcard-num">Who was in the room</div>
-    <div class="pcard-head">Every voice that mattered</div>
-    <div class="pcard-body">
-      <span class="pill pill-p">Registrar</span>
-      <span class="pill pill-p">College leadership</span>
-      <span class="pill pill-t">Provost's Office</span>
-      <span class="pill pill-t">Faculty</span>
-      <span class="pill pill-t">Industry partner</span>
-      <span class="pill pill-a">Badging committee</span>
-      <span class="pill pill-a">IT / LMS team</span>
+    :root {
+      --paper: #ffffff;
+      --ink: #222222;
+      --sage: #a0d296;
+      --periwinkle: #8ca0d2;
+      --teal: #8cc8c8;
+      --muted: #f5f5f5;
+      --muted-fg: #737373;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Inter", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--ink);
+      background: var(--paper);
+    }
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav a {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    nav a:hover { opacity: 0.5; }
+    nav .logo { height: 36px; width: auto; display: block; }
+
+    /* PAGE */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 64px 40px 100px;
+    }
+
+    .page-label {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--muted-fg);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      text-transform: uppercase;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 15px;
+      color: var(--muted-fg);
+      max-width: 560px;
+      line-height: 1.6;
+      margin-bottom: 64px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    /* CASE */
+    .case {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(34,34,34,0.15);
+    }
+    .case:last-of-type {
+      border-bottom: none;
+    }
+
+    .case-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .case-type {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      padding: 3px 10px;
+      border: 1px solid var(--ink);
+    }
+    .case-title {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr 32px 1fr 32px 1fr;
+      align-items: start;
+      gap: 0;
+    }
+
+    .card {
+      border: 1px solid var(--ink);
+      padding: 20px 22px;
+    }
+    .card-num {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted-fg);
+      margin-bottom: 8px;
+    }
+    .card-head {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .card-body {
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      color: rgba(34,34,34,0.75);
+      line-height: 1.6;
+    }
+
+    /* color accent on left border per card type */
+    .card-challenge { border-left: 3px solid var(--periwinkle); }
+    .card-who       { border-left: 3px solid var(--sage); }
+    .card-result    { border-left: 3px solid var(--teal); }
+
+    .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--muted-fg);
+      padding-top: 28px;
+    }
+
+    /* pills */
+    .pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+    .pill {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border: 1px solid var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* footer note */
+    .closing {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid var(--ink);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 13px;
+      color: var(--muted-fg);
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 14px 20px; }
+      main { padding: 40px 20px 80px; }
+      .flow {
+        grid-template-columns: 1fr;
+      }
+      .arrow { display: none; }
+      .card { margin-bottom: 8px; }
+      .case-header { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/"><img class="logo" src="/favicon.svg" alt="Beth Rochefort" /></a>
+    <a href="/">← Back to portfolio</a>
+  </nav>
+</header>
+
+<main>
+  <p class="page-label">Process Examples</p>
+  <h1>How I Move<br /><span style="color: var(--sage);">Work Forward</span></h1>
+  <p class="intro">Three examples of the same pattern: identify the right stakeholders, create the forum, and make complex change actually stick.</p>
+
+  <!-- CASE 1 -->
+  <div class="case">
+    <div class="case-header">
+      <span class="case-type">Bootcamp</span>
+      <h2 class="case-title">MentorWorks: from chaos to a repeatable process</h2>
+    </div>
+    <div class="flow">
+      <div class="card card-challenge">
+        <div class="card-num">Challenge</div>
+        <div class="card-head">Stakeholders talking past each other</div>
+        <div class="card-body">Non-credit boot camp had no agreed credentialing path. Registrar, partner, faculty, and IT each had conflicting requirements and no shared forum.</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="card card-who">
+        <div class="card-num">Who was in the room</div>
+        <div class="card-head">Every voice that mattered</div>
+        <div class="card-body">
+          <div class="pills">
+            <span class="pill">Registrar</span>
+            <span class="pill">College leadership</span>
+            <span class="pill">Provost's Office</span>
+            <span class="pill">Faculty</span>
+            <span class="pill">Industry partner</span>
+            <span class="pill">Badging committee</span>
+            <span class="pill">IT / LMS team</span>
+          </div>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="card card-result">
+        <div class="card-num">What changed</div>
+        <div class="card-head">Credentials issued, processes formalized</div>
+        <div class="card-body">Students earned badges and transcripts. Intake and coordination processes documented for all future non-credit programs. Sponsor called it the most efficient meeting he'd had at NU.</div>
+      </div>
     </div>
   </div>
-  <div class="arrow-mid">→</div>
-  <div class="pcard">
-    <div class="pcard-num">What changed</div>
-    <div class="pcard-head">Credentials issued, processes formalized</div>
-    <div class="pcard-body">Students earned badges and transcripts. Intake and coordination processes documented for all future non-credit programs. Sponsor called it the most efficient meeting he'd had at NU.</div>
-  </div>
-</div>
 
-<div class="section-label">IDEAL: from silos to a shared advisory body</div>
-<div class="row">
-  <div class="pcard">
-    <div class="pcard-num">Challenge</div>
-    <div class="pcard-head">EdTech decisions in the dark</div>
-    <div class="pcard-body">Tool adoptions, budget calls, and policy changes happening in silos. No shared process between Provost, CIO, and colleges — duplication, stalls, and missed opportunities.</div>
-  </div>
-  <div class="arrow-mid">→</div>
-  <div class="pcard">
-    <div class="pcard-num">Who was in the room</div>
-    <div class="pcard-head">30-member global network</div>
-    <div class="pcard-body">
-      <span class="pill pill-p">Provost's Office</span>
-      <span class="pill pill-p">CIO / ITS</span>
-      <span class="pill pill-t">Colleges</span>
-      <span class="pill pill-t">Faculty</span>
-      <span class="pill pill-a">Acad. Technology</span>
-      <span class="pill pill-a">Learning designers</span>
-      <span class="pill pill-c">Instructional tech</span>
+  <!-- CASE 2 -->
+  <div class="case">
+    <div class="case-header">
+      <span class="case-type">Cross-functional team</span>
+      <h2 class="case-title">IDEAL: from silos to a shared advisory body</h2>
+    </div>
+    <div class="flow">
+      <div class="card card-challenge">
+        <div class="card-num">Challenge</div>
+        <div class="card-head">EdTech decisions in the dark</div>
+        <div class="card-body">Tool adoptions, budget calls, and policy changes happening in silos. No shared process between Provost, CIO, and colleges — duplication, stalls, and missed opportunities.</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="card card-who">
+        <div class="card-num">Who was in the room</div>
+        <div class="card-head">30-member global network</div>
+        <div class="card-body">
+          <div class="pills">
+            <span class="pill">Provost's Office</span>
+            <span class="pill">CIO / ITS</span>
+            <span class="pill">Colleges</span>
+            <span class="pill">Faculty</span>
+            <span class="pill">Acad. Technology</span>
+            <span class="pill">Learning designers</span>
+            <span class="pill">Instructional tech</span>
+          </div>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="card card-result">
+        <div class="card-num">What changed</div>
+        <div class="card-head">Shared dashboard, stalemate broken</div>
+        <div class="card-body">Year-long tool adoption roadblock resolved within 6 months. New processes for LMS integration requests. Advisory function embedded in how the institution makes EdTech decisions.</div>
+      </div>
     </div>
   </div>
-  <div class="arrow-mid">→</div>
-  <div class="pcard">
-    <div class="pcard-num">What changed</div>
-    <div class="pcard-head">Shared dashboard, stalemate broken</div>
-    <div class="pcard-body">Year-long tool adoption roadblock resolved within 6 months. New processes for LMS integration requests. Advisory function embedded in how the institution makes EdTech decisions.</div>
-  </div>
-</div>
 
-<div class="section-label">Digital credentialing: from pilot to enterprise scale</div>
-<div class="row">
-  <div class="pcard">
-    <div class="pcard-num">Challenge</div>
-    <div class="pcard-head">No infrastructure for skill-based credentials</div>
-    <div class="pcard-body">A small pilot existed, but no enterprise framework, no policy, and no cross-functional ownership to bring it to scale across campuses.</div>
-  </div>
-  <div class="arrow-mid">→</div>
-  <div class="pcard">
-    <div class="pcard-num">Who was in the room</div>
-    <div class="pcard-head">Ownership built across the institution</div>
-    <div class="pcard-body">
-      <span class="pill pill-p">Provost's Office</span>
-      <span class="pill pill-p">Registrar</span>
-      <span class="pill pill-t">Colleges</span>
-      <span class="pill pill-t">Badging committee</span>
-      <span class="pill pill-a">IT / LMS team</span>
+  <!-- CASE 3 -->
+  <div class="case">
+    <div class="case-header">
+      <span class="case-type">Digital Credentialing</span>
+      <h2 class="case-title">From pilot to enterprise scale</h2>
+    </div>
+    <div class="flow">
+      <div class="card card-challenge">
+        <div class="card-num">Challenge</div>
+        <div class="card-head">No infrastructure for skill-based credentials</div>
+        <div class="card-body">A small pilot existed, but no enterprise framework, no policy, and no cross-functional ownership to bring it to scale across campuses.</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="card card-who">
+        <div class="card-num">Who was in the room</div>
+        <div class="card-head">Ownership built across the institution</div>
+        <div class="card-body">
+          <div class="pills">
+            <span class="pill">Provost's Office</span>
+            <span class="pill">Registrar</span>
+            <span class="pill">Colleges</span>
+            <span class="pill">Badging committee</span>
+            <span class="pill">IT / LMS team</span>
+          </div>
+        </div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="card card-result">
+        <div class="card-num">What changed</div>
+        <div class="card-head">9,300+ badges, institution-wide platform</div>
+        <div class="card-body">Pilot grew to 200+ badges created and 9,300+ awarded. Skillstack platform launched across all campuses including international locations in London and Canada.</div>
+      </div>
     </div>
   </div>
-  <div class="arrow-mid">→</div>
-  <div class="pcard">
-    <div class="pcard-num">What changed</div>
-    <div class="pcard-head">9,300+ badges, institution-wide platform</div>
-    <div class="pcard-body">Pilot grew to 200+ badges created and 9,300+ awarded. Skillstack platform launched across all campuses including international locations in London and Canada.</div>
-  </div>
-</div>
 
-<p style="font-size:12px; color: var(--color-text-tertiary); text-align:center; margin: 14px 0 4px;">The pattern is consistent: identify the right stakeholders, create the forum, move the work forward.</p>
+  <p class="closing">The pattern is consistent: identify the right stakeholders, create the forum, move the work forward.</p>
+</main>
+
+</body>
+</html>
