@@ -476,7 +476,7 @@ export default function App() {
               LinkedIn ↗
             </a>
             <span className="font-head text-base uppercase tracking-widest text-ink/70 md:text-right">
-              Based in the US · Available 2026
+              Boston, MA · Open to senior roles
             </span>
           </div>
         </div>
