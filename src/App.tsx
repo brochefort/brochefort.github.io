@@ -453,10 +453,13 @@ export default function App() {
       <section id="contact" className="bg-sage border-b border-ink">
         <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-40">
           <h2 className="font-head text-xs uppercase tracking-[0.3em]">Contact</h2>
-          <p className="mt-8 font-display text-[12vw] leading-[0.9] uppercase md:text-[7vw]">
-            Let's build
-            <br />something →
-          </p>
+          <div className="mt-8 flex items-center gap-6 md:gap-10">
+            <Logo className="h-[18vw] w-auto md:h-[10vw] flex-shrink-0" />
+            <p className="font-display text-[12vw] leading-[0.9] uppercase md:text-[7vw]">
+              Let's build
+              <br />something →
+            </p>
+          </div>
           <div className="mt-12 grid grid-cols-1 gap-6 border-t border-ink pt-8 md:grid-cols-3">
             <button
               onClick={() => setContactOpen(true)}
