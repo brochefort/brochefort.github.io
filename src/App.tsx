@@ -1,5 +1,114 @@
+import { useState } from "react";
 import portrait from "./assets/beth-portrait.jpg";
 import logo from "./assets/beth-logo.png";
+
+function ContactModal({ onClose }: { onClose: () => void }) {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: `New message from ${form.name} via bethrochefort.com`,
+        }),
+      });
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/60 backdrop-blur-sm px-4"
+      onClick={(e) => e.target === e.currentTarget && onClose()}
+    >
+      <div className="bg-paper border border-ink w-full max-w-lg relative">
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute top-4 right-4 font-head text-xs uppercase tracking-widest hover:opacity-50 transition-opacity"
+        >
+          ✕
+        </button>
+
+        <div className="p-8 md:p-10">
+          <h2 className="font-head text-xs uppercase tracking-[0.3em] border-b border-ink pb-6 mb-8">
+            Get in Touch
+          </h2>
+
+          {status === "success" ? (
+            <div className="py-8 text-center">
+              <p className="font-display text-2xl uppercase">Message sent!</p>
+              <p className="mt-3 font-body text-sm text-ink/70">I'll be in touch soon.</p>
+              <button
+                onClick={onClose}
+                className="mt-8 font-head text-xs uppercase tracking-widest border-b border-ink pb-0.5 hover:opacity-50 transition-opacity"
+              >
+                Close
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <div className="flex flex-col gap-1.5">
+                <label className="font-head text-xs uppercase tracking-widest">Name</label>
+                <input
+                  required
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  className="border border-ink px-3 py-2.5 font-body text-sm bg-paper focus:outline-none focus:ring-1 focus:ring-ink"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="font-head text-xs uppercase tracking-widest">Email</label>
+                <input
+                  required
+                  type="email"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  className="border border-ink px-3 py-2.5 font-body text-sm bg-paper focus:outline-none focus:ring-1 focus:ring-ink"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="font-head text-xs uppercase tracking-widest">Message</label>
+                <textarea
+                  required
+                  rows={5}
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  className="border border-ink px-3 py-2.5 font-body text-sm bg-paper focus:outline-none focus:ring-1 focus:ring-ink resize-none"
+                />
+              </div>
+              {status === "error" && (
+                <p className="font-body text-xs text-red-600">Something went wrong — please try again.</p>
+              )}
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="mt-2 bg-ink text-paper font-head text-xs uppercase tracking-widest py-3 hover:bg-sage hover:text-ink transition-colors disabled:opacity-50"
+              >
+                {status === "sending" ? "Sending…" : "Send Message"}
+              </button>
+            </form>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 type Domain = {
   id: string;
@@ -128,8 +237,11 @@ function Logo({ className = "h-8 w-auto" }: { className?: string }) {
 }
 
 export default function App() {
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-paper text-ink">
+      {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
       {/* NAV */}
       <header className="sticky top-0 z-50 border-b border-ink bg-paper">
         <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 md:px-10">
@@ -346,9 +458,12 @@ export default function App() {
             <br />something →
           </p>
           <div className="mt-12 grid grid-cols-1 gap-6 border-t border-ink pt-8 md:grid-cols-3">
-            <span className="font-head text-base uppercase tracking-widest">
-              Contact me
-            </span>
+            <button
+              onClick={() => setContactOpen(true)}
+              className="font-head text-base uppercase tracking-widest hover:opacity-60 transition-opacity text-left"
+            >
+              Contact me ↗
+            </button>
             <a
               href="https://www.linkedin.com/in/bethrochefort/"
               target="_blank"
