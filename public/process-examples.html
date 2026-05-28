@@ -1,0 +1,107 @@
+<style>
+.pcard { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 12px; padding: 14px 16px; }
+.pcard-num { font-size: 11px; font-weight: 500; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px; }
+.pcard-head { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 7px; }
+.pcard-body { font-size: 12px; color: var(--color-text-secondary); line-height: 1.55; }
+.pill { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 20px; margin: 2px 2px 0 0; }
+.pill-p { background: #EEEDFE; color: #3C3489; }
+.pill-t { background: #E1F5EE; color: #085041; }
+.pill-a { background: #FAEEDA; color: #633806; }
+.pill-c { background: #FAECE7; color: #712B13; }
+@media (prefers-color-scheme: dark) {
+  .pill-p { background: #26215C; color: #AFA9EC; }
+  .pill-t { background: #04342C; color: #5DCAA5; }
+  .pill-a { background: #412402; color: #FAC775; }
+  .pill-c { background: #4A1B0C; color: #F0997B; }
+}
+.row { display: grid; grid-template-columns: 1fr 22px 1fr 22px 1fr; align-items: center; gap: 8px; margin-bottom: 10px; }
+.arrow-mid { display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--color-text-tertiary); }
+.section-label { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin: 14px 0 8px; border-left: 3px solid var(--color-border-secondary); padding-left: 10px; }
+</style>
+
+<div class="section-label">MentorWorks: from chaos to a repeatable process</div>
+<div class="row">
+  <div class="pcard">
+    <div class="pcard-num">Challenge</div>
+    <div class="pcard-head">Stakeholders talking past each other</div>
+    <div class="pcard-body">Non-credit boot camp had no agreed credentialing path. Registrar, partner, faculty, and IT each had conflicting requirements and no shared forum.</div>
+  </div>
+  <div class="arrow-mid">→</div>
+  <div class="pcard">
+    <div class="pcard-num">Who was in the room</div>
+    <div class="pcard-head">Every voice that mattered</div>
+    <div class="pcard-body">
+      <span class="pill pill-p">Registrar</span>
+      <span class="pill pill-p">College leadership</span>
+      <span class="pill pill-t">Provost's Office</span>
+      <span class="pill pill-t">Faculty</span>
+      <span class="pill pill-t">Industry partner</span>
+      <span class="pill pill-a">Badging committee</span>
+      <span class="pill pill-a">IT / LMS team</span>
+    </div>
+  </div>
+  <div class="arrow-mid">→</div>
+  <div class="pcard">
+    <div class="pcard-num">What changed</div>
+    <div class="pcard-head">Credentials issued, processes formalized</div>
+    <div class="pcard-body">Students earned badges and transcripts. Intake and coordination processes documented for all future non-credit programs. Sponsor called it the most efficient meeting he'd had at NU.</div>
+  </div>
+</div>
+
+<div class="section-label">IDEAL: from silos to a shared advisory body</div>
+<div class="row">
+  <div class="pcard">
+    <div class="pcard-num">Challenge</div>
+    <div class="pcard-head">EdTech decisions in the dark</div>
+    <div class="pcard-body">Tool adoptions, budget calls, and policy changes happening in silos. No shared process between Provost, CIO, and colleges — duplication, stalls, and missed opportunities.</div>
+  </div>
+  <div class="arrow-mid">→</div>
+  <div class="pcard">
+    <div class="pcard-num">Who was in the room</div>
+    <div class="pcard-head">30-member global network</div>
+    <div class="pcard-body">
+      <span class="pill pill-p">Provost's Office</span>
+      <span class="pill pill-p">CIO / ITS</span>
+      <span class="pill pill-t">Colleges</span>
+      <span class="pill pill-t">Faculty</span>
+      <span class="pill pill-a">Acad. Technology</span>
+      <span class="pill pill-a">Learning designers</span>
+      <span class="pill pill-c">Instructional tech</span>
+    </div>
+  </div>
+  <div class="arrow-mid">→</div>
+  <div class="pcard">
+    <div class="pcard-num">What changed</div>
+    <div class="pcard-head">Shared dashboard, stalemate broken</div>
+    <div class="pcard-body">Year-long tool adoption roadblock resolved within 6 months. New processes for LMS integration requests. Advisory function embedded in how the institution makes EdTech decisions.</div>
+  </div>
+</div>
+
+<div class="section-label">Digital credentialing: from pilot to enterprise scale</div>
+<div class="row">
+  <div class="pcard">
+    <div class="pcard-num">Challenge</div>
+    <div class="pcard-head">No infrastructure for skill-based credentials</div>
+    <div class="pcard-body">A small pilot existed, but no enterprise framework, no policy, and no cross-functional ownership to bring it to scale across campuses.</div>
+  </div>
+  <div class="arrow-mid">→</div>
+  <div class="pcard">
+    <div class="pcard-num">Who was in the room</div>
+    <div class="pcard-head">Ownership built across the institution</div>
+    <div class="pcard-body">
+      <span class="pill pill-p">Provost's Office</span>
+      <span class="pill pill-p">Registrar</span>
+      <span class="pill pill-t">Colleges</span>
+      <span class="pill pill-t">Badging committee</span>
+      <span class="pill pill-a">IT / LMS team</span>
+    </div>
+  </div>
+  <div class="arrow-mid">→</div>
+  <div class="pcard">
+    <div class="pcard-num">What changed</div>
+    <div class="pcard-head">9,300+ badges, institution-wide platform</div>
+    <div class="pcard-body">Pilot grew to 200+ badges created and 9,300+ awarded. Skillstack platform launched across all campuses including international locations in London and Canada.</div>
+  </div>
+</div>
+
+<p style="font-size:12px; color: var(--color-text-tertiary); text-align:center; margin: 14px 0 4px;">The pattern is consistent: identify the right stakeholders, create the forum, move the work forward.</p>

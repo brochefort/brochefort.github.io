@@ -206,7 +206,7 @@ const workGroups: { anchor: string; label: string; accent: string; projects: Pro
         title: "Process Examples",
         client: "",
         year: "Ongoing",
-        href: "/beth-rochefort-examples.pdf",
+        href: "/process-examples.html",
       },
     ],
   },
