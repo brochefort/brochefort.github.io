@@ -215,8 +215,9 @@ const workGroups: { anchor: string; label: string; accent: string; projects: Pro
     label: "Teaching",
     accent: "text-sage",
     projects: [
-      { no: "01", title: "Prototype Your Innovation", client: "", year: "2026" },
-      { no: "02", title: "Teaching with AI Resources", client: "", year: "2026" },
+      { no: "01", title: "Prototype Your Innovation", client: "", year: "2026", href: "/beth-rochefort-examples.pdf" },
+      { no: "02", title: "Teaching with AI Resources", client: "", year: "2026", href: "/beth-rochefort-examples.pdf" },
+      { no: "03", title: "Teaching Effectiveness", client: "Graduate Instruction · Northeastern University", year: "2024–2026", href: "/teaching-effectiveness.html" },
     ],
   },
 ];

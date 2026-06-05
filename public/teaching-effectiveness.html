@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaching Effectiveness Highlights — Beth Rochefort, Ed.D.</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  .site-nav {
+    position: sticky; top: 0; z-index: 50;
+    border-bottom: 1px solid #222;
+    background: #fff;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 40px;
+  }
+  .site-nav img { height: 36px; width: auto; display: block; }
+  .site-nav a {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.18em; color: #222;
+    text-decoration: none;
+  }
+  .site-nav a:hover { opacity: 0.5; }
+  @media (max-width: 600px) { .site-nav { padding: 12px 16px; } }
+</style>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #faf9f7;
+    color: #1a1a18;
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 0.5px solid #dddbd5;
+    border-radius: 4px;
+    padding: 3rem 3.5rem;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid #1a1a18;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .name-sub {
+    font-size: 12px;
+    color: #6b6b65;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .header-tag {
+    font-size: 11px;
+    color: #6b6b65;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  /* Section labels */
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6b6b65;
+    border-bottom: 0.5px solid #dddbd5;
+    padding-bottom: 6px;
+    margin-bottom: 1rem;
+  }
+
+  /* Stats row */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 2.25rem;
+  }
+
+  .stat {
+    background: #f4f3f0;
+    border-radius: 6px;
+    padding: 1rem 0.75rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 5px;
+    color: #1a1a18;
+  }
+
+  .stat-label {
+    font-size: 10.5px;
+    color: #6b6b65;
+    line-height: 1.35;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  /* Course ratings */
+  .courses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 2rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .course-row {
+    font-size: 13px;
+  }
+
+  .course-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+
+  .course-name {
+    color: #444440;
+    line-height: 1.3;
+    flex: 1;
+  }
+
+  .course-score {
+    font-weight: 500;
+    font-size: 14px;
+    white-space: nowrap;
+    color: #1a1a18;
+  }
+
+  .bar-bg {
+    height: 3px;
+    background: #e8e7e3;
+    border-radius: 2px;
+  }
+
+  .bar-fill {
+    height: 3px;
+    border-radius: 2px;
+    background: #1a1a18;
+    transition: width 0.3s ease;
+  }
+
+  /* Quotes */
+  .quotes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 2rem;
+  }
+
+  .quote-card {
+    background: #f4f3f0;
+    border-radius: 6px;
+    padding: 1rem 1.1rem 0.85rem;
+    position: relative;
+  }
+
+  .quote-mark {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    line-height: 0;
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    color: #cccbc6;
+  }
+
+  .quote-text {
+    font-size: 13px;
+    line-height: 1.65;
+    font-style: italic;
+    color: #2a2a28;
+    padding-left: 18px;
+    padding-top: 4px;
+  }
+
+  .quote-source {
+    font-size: 10.5px;
+    color: #6b6b65;
+    padding-left: 18px;
+    margin-top: 8px;
+    font-style: normal;
+    letter-spacing: 0.02em;
+  }
+
+  /* Footer */
+  .footnote {
+    font-size: 10.5px;
+    color: #8a8a84;
+    line-height: 1.6;
+    border-top: 0.5px solid #dddbd5;
+    padding-top: 0.85rem;
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { border: none; padding: 1.5rem 2rem; max-width: 100%; }
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 1.5rem; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .courses { grid-template-columns: 1fr; }
+    .quotes { grid-template-columns: 1fr; }
+    .header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .header-tag { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/"><img src="/beth-logo.png" alt="Beth Rochefort" /></a>
+  <a href="/">← Back to portfolio</a>
+</nav>
+<div class="page">
+
+  <div class="header">
+    <div>
+      <div class="name">Beth Rochefort, Ed.D., PMP</div>
+      <div class="name-sub">Graduate Adjunct Instructor &nbsp;·&nbsp; Northeastern University</div>
+    </div>
+    <div class="header-tag">
+      Teaching Effectiveness Highlights<br>
+      Graduate-Level Instruction &nbsp;·&nbsp; 2024–2026
+    </div>
+  </div>
+
+  <p class="section-label">At a glance</p>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">8</div>
+      <div class="stat-label">Courses evaluated</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4.6</div>
+      <div class="stat-label">Avg. overall effectiveness</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Would recommend<br>(EDU7511, Fall '24)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4.7+</div>
+      <div class="stat-label">Inclusive environment<br>avg. rating</div>
+    </div>
+  </div>
+
+  <p class="section-label">Overall instructor effectiveness by course &nbsp;(5-point scale)</p>
+  <div class="courses">
+
+    <div class="course-row">
+      <div class="course-top">
+        <span class="course-name">EDU7511 Digital Workplace Learning (Fall '24)</span>
+        <span class="course-score">5.0</span>
+      </div>
+      <div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div>
+    </div>
+
+    <div class="course-row">
+      <div class="course-top">
+        <span class="course-name">EDU6558 Issues in Education (Winter '24)</span>
+        <span class="course-score">5.0</span>
+      </div>
+      <div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div>
+    </div>
+
+    <div class="course-row">
+      <div class="course-top">
+        <span class="course-name">EDU6558 Issues in Education (Spring '25)</span>
+        <span class="course-score">5.0</span>
+      </div>
+      <div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div>
+    </div>
+
+    <div class="course-row">
+      <div class="course-top">
+        <span class="course-name">PJM6215 Leading Remote Teams (Spring '25)</span>
+        <span class="course-score">4.67</span>
+      </div>
+      <div class="bar-bg"><div class="bar-fill" style="width:93%"></div></div>
+    </div>
+
+    <div class="course-row">
+      <div class="course-top">
+        <span class="course-name">PJM6185 Innovation &amp; Strategy (Winter '26)</span>
+        <span class="course-score">4.55</span>
+      </div>
+      <div class="bar-bg"><div class="bar-fill" style="width:91%"></div></div>
+    </div>
+
+    <div class="course-row">
+      <div class="course-top">
+        <span class="course-name">PJM6620 Strategy &amp; Needs Assessment (Fall '25)</span>
+        <span class="course-score">4.50</span>
+      </div>
+      <div class="bar-bg"><div class="bar-fill" style="width:90%"></div></div>
+    </div>
+
+    <div class="course-row">
+      <div class="course-top">
+        <span class="course-name">PJM6005 Project Scope Mgmt – Sec 30 (Winter '25)</span>
+        <span class="course-score">4.33</span>
+      </div>
+      <div class="bar-bg"><div class="bar-fill" style="width:87%"></div></div>
+    </div>
+
+    <div class="course-row">
+      <div class="course-top">
+        <span class="course-name">PJM6005 Project Scope Mgmt – Sec 24 (Winter '25)</span>
+        <span class="course-score">3.50</span>
+      </div>
+      <div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div>
+    </div>
+
+  </div>
+
+  <p class="section-label">What students say</p>
+  <div class="quotes">
+
+    <div class="quote-card">
+      <span class="quote-mark">&#8220;</span>
+      <p class="quote-text">Dr. Rochefort is clearly an expert in this field. She is very organized, clear in her expectations, responsive, and demonstrates genuine care for her students.</p>
+      <p class="quote-source">EDU6558 Issues in Education &nbsp;·&nbsp; Winter 2024</p>
+    </div>
+
+    <div class="quote-card">
+      <span class="quote-mark">&#8220;</span>
+      <p class="quote-text">She went out of her way to email us individually with helpful resources. Her feedback was always incredibly timely, extensive, and helpful.</p>
+      <p class="quote-source">EDU7511 Digital Workplace Learning &nbsp;·&nbsp; Fall 2024</p>
+    </div>
+
+    <div class="quote-card">
+      <span class="quote-mark">&#8220;</span>
+      <p class="quote-text">She gave me invaluable feedback which I will take into my doctoral work. She displayed tremendous enthusiasm for the subject area and for all of our work.</p>
+      <p class="quote-source">EDU7511 Digital Workplace Learning &nbsp;·&nbsp; Fall 2024</p>
+    </div>
+
+    <div class="quote-card">
+      <span class="quote-mark">&#8220;</span>
+      <p class="quote-text">I would love to see this course be a 12-week full credit program and a core requirement for anyone in a learning design role. The skills and knowledge are absolutely needed.</p>
+      <p class="quote-source">EDU6558 Issues in Education &nbsp;·&nbsp; Spring 2025</p>
+    </div>
+
+    <div class="quote-card">
+      <span class="quote-mark">&#8220;</span>
+      <p class="quote-text">The instructor clearly puts significant effort into making the course dynamic and engaging. Bringing in guest speakers to share real-world innovation experiences added excellent practical context.</p>
+      <p class="quote-source">PJM6185 Innovation &amp; Strategy &nbsp;·&nbsp; Winter 2026</p>
+    </div>
+
+    <div class="quote-card">
+      <span class="quote-mark">&#8220;</span>
+      <p class="quote-text">Dr. Rochefort has developed a very practical course that builds skills to use in a variety of contexts. The course is excellent as is!</p>
+      <p class="quote-source">EDU6558 Issues in Education &nbsp;·&nbsp; Winter 2024</p>
+    </div>
+
+  </div>
+
+  <p class="footnote">Evaluations drawn from 8 graduate-level sections across EDU and PJM programs at Northeastern University's College of Professional Studies, 2024–2026. Scores reflect the overall instructor effectiveness rating on a 5-point scale. Instructor ratings consistently meet or exceed institutional course averages across all categories, including subject matter mastery, feedback quality, respectful and inclusive learning environment, and real-world applicability.</p>
+
+</div>
+</body>
+</html>
